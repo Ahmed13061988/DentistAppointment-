@@ -1,0 +1,20 @@
+  
+<h2 class="brown-text">Upcoming Appointments for <%= current_patient.first_name %></h2>
+<% if @appointments.blank? %>
+<h4 class="red-text">You have no upcoming appointments.</h4>
+<% else %>
+<h4 class="brown-text">These are your upcoming appointments:</h4>
+
+<ul id = "appointments">
+   <% @appointments.each do |f| %>
+
+   <li><%= link_to f.title, {:action => 'show', :id => f.id} -%></li>
+   <p>
+      <%= link_to "Edit Appointment", edit_appointment_path(f) %> | 
+      <%= link_to "Delete Appointment", appointment_path(f), method: :delete, data: { confirm: "Are you sure?", disable_with: "Processing..." }%>
+   </p>
+   <% end %>
+</ul>
+
+<% end %>
+<p><%= link_to "Add new Appointment", {:action => 'new' }%></p>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>List of Dentist</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+
+  <%= csrf_meta_tags %>  
+</head>
+<body>
+ 
+    <h1>Dentist List</h1>
+ 
+    
+    <li>
+      <% @dentists.each do |service| %> 
+        <li><%= link_to dentist.name, dentist_path(dentist)%></li> 
+      <% end %>
+    </li> 
+    <%= form_tag dentist_path, method: :get do%>
+        <%= text_field_tag :search, params[:search]%>
+        <%= submit_tag ("Search")%>
+        <% end %>
+
+    <br>
+    <br>
+    <a class="waves-effect waves-light btn-small"<%= link_to "Add new Appointment", new_appointment_path%></a>
+</body>
+</html>

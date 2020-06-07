@@ -1,0 +1,28 @@
+<h1 class="brown-text">Create an Account</h1>
+
+<%= form_for(@patient, url: '/signup') do |f|%>
+    <% if @patient.errors.any? %>
+    <h4> Errors: </h4>
+      <ul>
+        <% @patient.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+        <% end %>
+      </ul>
+    <%end%>
+
+    <%= f.label :first_name %>
+    <%= f.text_field :first_name  %>
+    <br>
+    <%= f.label :last_name %>
+    <%= f.text_field :last_name %>
+    <br>
+    <%= f.label :email %>
+    <%= f.email_field :email, required:true %>
+
+    <%= f.label :password %>
+    <%= f.password_field :password, required:true %>
+    <br>
+    <br>
+    <%= f.submit "Submit" %>
+
+<% end %>

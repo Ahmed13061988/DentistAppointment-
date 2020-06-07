@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title class="brown-text" >Dentists List</title>
+
+</head>
+<body>
+    <div class="navigation">
+      
+    </div>
+ 
+    <h1><%= @dentist.name%></h1>
+ 
+    <p>
+      <strong>Description:</strong>
+      <%= @dentist.description%>
+    </p>
+
+    <p>
+      <strong>Duration:</strong>
+      <%= @dentist.duration%>
+    </p>
+ 
+    <p>
+      <strong>Price:</strong>
+      <%= @dentist.cost %>
+    </p>
+ 
+    <a class="waves-effect waves-light btn-small"<%= link_to "Add new Appointment", new_appointment_path%></a>
+
+</body>
+</html>

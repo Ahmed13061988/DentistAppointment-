@@ -1,0 +1,12 @@
+<h1 class="brown-text"> Welcome <%=@patient.first_name%>!</h1>
+<h6 class="brown-text"> If you have appointments, see them below. If you don't have any appointments, click to create a new appointment!</h6>
+<br>
+<br>
+<li>
+<% @patient.appointments.each do |appointment| %>
+    <li><%= link_to appointment.dentist.name, patient_appointments_path(@patient,appointment) %></li>
+<% end %>
+</li>
+
+<br>
+<a class="waves-effect waves-light btn-small"<%= link_to "Add new Appointment", new_appointment_path%></a>

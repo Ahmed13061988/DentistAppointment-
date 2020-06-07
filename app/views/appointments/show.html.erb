@@ -1,0 +1,9 @@
+<h3><%= @appointment.title %></h3> 
+
+<p>
+   <strong>Name: </strong> <%= @appointment.dentist.name %><br>
+   <strong>Date :</strong> <%= @appointment.date.strftime('%a, %b %d, %Y')%><br>
+   <strong>Time :</strong> <%= @appointment.time.strftime('%I:%M %p')%><br>
+</p>
+
+<%= link_to "Add a Review for this Appointment", new_review_path%> 
